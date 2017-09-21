@@ -1,12 +1,12 @@
 Bacteria[] bob;
-
+int num = (int)(Math.random())+100;
 void setup()
 {
   size(500, 500);
-  bob = new Bacteria[5];
+  bob = new Bacteria[100];
     for (int i =0; i < bob.length; i++)
   {
-    bob[i] = new Bacteria (100, 100, (int)(Math.random())+100);
+    bob[i] = new Bacteria (250, 250, (int)(Math.random()*101)+100 );
   }
 }
 
@@ -39,7 +39,7 @@ class Bacteria
 
   void show()
   {
-    fill(myCol,myCol,myCol);
+    fill(myCol ,myCol + 40 ,myCol + 155);
     ellipse(myX, myY, 10, 10);
   }
 }
