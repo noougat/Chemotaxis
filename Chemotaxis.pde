@@ -3,16 +3,16 @@ int num = (int)(Math.random())+100;
 void setup()
 {
   size(500, 500);
-  bob = new Bacteria[100];
-    for (int i =0; i < bob.length; i++)
+  bob = new Bacteria[10];
+  for (int i =0; i < bob.length; i++)
   {
-    bob[i] = new Bacteria (250, 250, (int)(Math.random()*101)+100 );
+    bob[i] = new Bacteria ((int)(Math.random()*501),(int)(Math.random()*501), (int)(Math.random()*101)+100 );
   }
 }
 
 void draw()
 {
-    background(0);
+  background(0);
   for (int i =0; i < bob.length; i++)
   {
     bob[i].walk();
@@ -39,7 +39,16 @@ class Bacteria
 
   void show()
   {
-    fill(myCol ,myCol + 40 ,myCol + 155);
-    ellipse(myX, myY, 10, 10);
+    noStroke();
+    fill(myCol, myCol + 40, myCol + 155);
+    arc(myX, myY, 40, 40, PI*6/5, 2*PI);
+    arc(myX + 25, myY +10, 50, 50, PI*1/4, PI*33/24);
+    fill(0);
+    ellipse(myX + 5,myY - 10, 5, 5);
+    fill(247,112,112);
+    arc(mouseX, mouseY, 40, 40, PI*6/5, 2*PI);
+    arc(mouseX + 25, mouseY +10, 50, 50, PI*1/4, PI*33/24);
+    fill(0);
+    ellipse(mouseX + 5,mouseY - 10, 5, 5);
   }
 }
