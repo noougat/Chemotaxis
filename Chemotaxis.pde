@@ -71,7 +71,6 @@ void mouseDragged()
 void mouseReleased()
 
   {
-    System.out.print("reset!");
       for (int i =0; i < bob.length; i++)
   {
     bob[i].myX =  bob[i].myX + (int)(Math.random()*7)-3;
