@@ -6,7 +6,7 @@ void setup()
   bob = new Bacteria[10];
   for (int i =0; i < bob.length; i++)
   {
-    bob[i] = new Bacteria ((int)(Math.random()*501),(int)(Math.random()*501), (int)(Math.random()*101)+100 );
+    bob[i] = new Bacteria ((int)(Math.random()*501), (int)(Math.random()*501), (int)(Math.random()*101)+100 );
   }
 }
 
@@ -44,11 +44,37 @@ class Bacteria
     arc(myX, myY, 40, 40, PI*6/5, 2*PI);
     arc(myX + 25, myY +10, 50, 50, PI*1/4, PI*33/24);
     fill(0);
-    ellipse(myX + 5,myY - 10, 5, 5);
-    fill(247,112,112);
+    ellipse(myX + 5, myY - 10, 5, 5);
+    fill(247, 112, 112);
     arc(mouseX, mouseY, 40, 40, PI*6/5, 2*PI);
     arc(mouseX + 25, mouseY +10, 50, 50, PI*1/4, PI*33/24);
     fill(0);
-    ellipse(mouseX + 5,mouseY - 10, 5, 5);
+    ellipse(mouseX + 5, mouseY - 10, 5, 5);
   }
 }
+
+void mouseDragged()
+{
+  for (int i =0; i < bob.length; i++)
+  {
+    if (bob[i].myX > mouseX)
+      bob[i].myX =bob[i]. myX + (int)(Math.random())-1;
+    else if (bob[i].myX < mouseX)
+      bob[i].myX = bob[i].myX + (int)(Math.random()*2);
+      
+    if (bob[i].myY > mouseY)
+      bob[i].myY =bob[i]. myY + (int)(Math.random())-1;
+    else if (bob[i].myY < mouseY)
+      bob[i].myY = bob[i].myY + (int)(Math.random()*2);
+  }
+}
+void mouseReleased()
+
+  {
+    System.out.print("reset!");
+      for (int i =0; i < bob.length; i++)
+  {
+    bob[i].myX =  bob[i].myX + (int)(Math.random()*7)-3;
+     bob[i].myY =  bob[i].myY + (int)(Math.random()*7)-3;
+  }
+  }
