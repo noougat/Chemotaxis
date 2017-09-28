@@ -33,6 +33,18 @@ class Bacteria
 
   void walk()
   {
+    if (mousePressed == true)
+    {
+      if (myX > mouseX)
+        myX =myX + (int)(Math.random())-1;
+      else if (myX < mouseX)
+        myX = myX + (int)(Math.random()*2);
+
+      if (myY > mouseY)
+        myY =myY + (int)(Math.random())-1;
+      else if (myY < mouseY)
+        myY = myY + (int)(Math.random()*2);
+    }
     myX = myX + (int)(Math.random()*3)-1;
     myY = myY + (int)(Math.random()*3)-1;
   }
@@ -53,27 +65,12 @@ class Bacteria
   }
 }
 
-void mouseDragged()
+void mouseReleased()
+
 {
   for (int i =0; i < bob.length; i++)
   {
-    if (bob[i].myX > mouseX)
-      bob[i].myX =bob[i]. myX + (int)(Math.random())-1;
-    else if (bob[i].myX < mouseX)
-      bob[i].myX = bob[i].myX + (int)(Math.random()*2);
-      
-    if (bob[i].myY > mouseY)
-      bob[i].myY =bob[i]. myY + (int)(Math.random())-1;
-    else if (bob[i].myY < mouseY)
-      bob[i].myY = bob[i].myY + (int)(Math.random()*2);
+    bob[i].myX =  bob[i].myX + (int)(Math.random()*7)-3;
+    bob[i].myY =  bob[i].myY + (int)(Math.random()*7)-3;
   }
 }
-void mouseReleased()
-
-  {
-      for (int i =0; i < bob.length; i++)
-  {
-    bob[i].myX =  bob[i].myX + (int)(Math.random()*7)-3;
-     bob[i].myY =  bob[i].myY + (int)(Math.random()*7)-3;
-  }
-  }
